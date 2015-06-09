@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-  <title>FinalProject</title>
+  <title>Bridge</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div>
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
@@ -23,6 +25,7 @@
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+</div>
 <%= yield %>
 
 </body>

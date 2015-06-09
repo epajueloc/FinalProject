@@ -1,4 +1,5 @@
 class PostingsController < ApplicationController
+	  before_action :authenticate_user!
 	def index
 		@postings = Postings.all.order(:created_at)
 	end

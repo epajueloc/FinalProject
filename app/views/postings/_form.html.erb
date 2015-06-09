@@ -1,0 +1,29 @@
+<%= simple_form_for [current_user, @posting] do |f| %>
+
+<% if @posting.errors.any? %>
+<h3>
+<%= pluralize(@posting.errors.count, "error") %>
+This posting could not be saved
+</h3>
+<ul>
+<% @posting.errors.full_messages each do |message| %>
+<li><%= message %></li>
+</ul>
+
+<% end %>
+<% end %>
+
+</br>
+</br>
+
+<p>
+	<%= f.input :title %>
+	<%= f.input :description %>
+  	<%= f.input :date %>
+  	<%= f.input :compensation %>
+  	<%= f.input :phone %>
+  	<%= f.input :email %>
+  	<%= f.button :submit %>
+</p>
+
+<% end %>
