@@ -18,6 +18,7 @@ This posting could not be saved
 
 <p>
 	<%= f.input :title %>
+	<%= f.association :categories, value_method: :type %>
 	<%= f.input :description %>
   	<%= f.input :date %>
   	<%= f.input :compensation %>

@@ -2,4 +2,4 @@
 
 <div class= form> <%= render 'form' %> </div>
  
-<button><%= link_to 'Back', user_postings_path %></button>
+<button><%= link_to 'Back', user_posting_path(current_user, @posting) %></button>
