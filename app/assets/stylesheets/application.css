@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
  h1	{
  	text-align: center;
  }
+
+.form {
+	text-align: center;
+	margin: auto 500px auto 500px;
+}
