@@ -1,7 +1,7 @@
 class PostingsController < ApplicationController
 	  before_action :authenticate_user!
 	def index
-		@postings = Postings.all.order(:created_at)
+		@postings = Posting.all.order(:created_at)
 	end
 
 	def new
@@ -48,7 +48,7 @@ class PostingsController < ApplicationController
 
 	private
 	def posting_params
-		params.require(:posting).permit(:name,:description,:date,:compensation,:phone,:email)
+		params.require(:posting).permit(:title,:description,:date,:compensation,:phone,:email)
 	end
 
 end
