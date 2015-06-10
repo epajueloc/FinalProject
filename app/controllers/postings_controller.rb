@@ -31,11 +31,22 @@ class PostingsController < ApplicationController
 	end
 
 	def edit
+		@user = current_user
+		@client = User.find(params[:client_id])
+#posting = Posting.find(params[:id])
 		@posting = Posting.find(params[:id])
+
 	end
 
 	def update
+		@user = current_user
 		@posting = Posting.find(params[:id])
+
+		categories = params[:posting][:category_ids]
+		categories.pop
+		categories.each do |k|
+		   @posting.categories << Category.find(k.to_i)
+		end
 
 		if @posting.update(posting_params)
 			redirect_to client_posting_path(current_user,@posting)
