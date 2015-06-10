@@ -1,4 +1,4 @@
-<%= simple_form_for [current_user, @posting] do |f| %>
+<%= simple_form_for [@client, @client.postings.build], url: client_postings_path(@client) do |f| %>
 
 <% if @posting.errors.any? %>
 <h3>

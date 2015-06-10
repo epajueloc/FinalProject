@@ -1,23 +1,23 @@
 <h1><%= @posting.title %></h1>
 
-<p><b> Category: </b></p>
+<h4>Categories:</h4> <% @posting.categories.each do |category| %><p><%= category.type %></p><% end %>
 
-<p><b> Description: </b><%= @posting.description %></p>
+<p><strong> Description: </strong><%= @posting.description %></p>
 
-<p><b> Date&Time: </b><%= @posting.date %></p>
+<p><strong> Date&Time: </strong><%= @posting.date %></p>
 
-<p><b> Compensation: </b><%= @posting.compensation %></p>
+<p><strong> Compensation: </strong><%= @posting.compensation %></p>
 
-<p><b> Phone number: </b><%= @posting.phone %></p>
+<p><strong> Phone numstronger: </strong><%= @posting.phone %></p>
 
-<p><b> Contact email: </b><%= @posting.email %></p>
+<p><strong> Contact email: </strong><%= @posting.email %></p>
 </br>
 
-<%= link_to 'Edit', edit_user_posting_path(current_user, @posting) %> |
+<%= link_to 'Edit', edit_client_posting_path(current_user, @posting) %> |
 
-<%= link_to 'Delete', user_posting_path(current_user, @posting),
+<%= link_to 'Delete', client_posting_path(current_user, @posting),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 
 
-<p><%= link_to 'All Postings', user_postings_path %></p>
+<p><%= link_to 'All Postings', client_postings_path %></p>

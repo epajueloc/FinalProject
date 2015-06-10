@@ -6,15 +6,20 @@ class PostingsController < ApplicationController
 
 	def new
 		@user = current_user
-		@posting = current_user.postings.build
+		@client = User.find(params[:client_id])
+		@posting = @client.postings.build
 	end
 	
 	def create
 		@user = current_user
 		@posting = current_user.postings.build(posting_params)
-
+		categories = params[:posting][:category_ids]
+		categories.pop
+		categories.each do |k|
+		   @posting.categories << Category.find(k.to_i)
+		end
 		if @posting.save
-			redirect_to user_posting_path(current_user,@posting)
+			redirect_to client_posting_path(current_user, @posting)
 		else
 			render :new
 		end
@@ -23,7 +28,6 @@ class PostingsController < ApplicationController
 	def show
 		@user = current_user
 		@posting = Posting.find(params[:id])
-		#@pins = Pin.where(posting_id: @posting) #.id)
 	end
 
 	def edit
@@ -34,7 +38,7 @@ class PostingsController < ApplicationController
 		@posting = Posting.find(params[:id])
 
 		if @posting.update(posting_params)
-			redirect_to user_posting_path(current_user,@posting)
+			redirect_to client_posting_path(current_user,@posting)
 		else
 			render :edit
 		end
@@ -43,7 +47,7 @@ class PostingsController < ApplicationController
 	def destroy
 		@posting = Posting.find(params[:id])
 		@posting.destroy
-		redirect_to user_postings_path
+		redirect_to client_postings_path
 	end
 
 	private
