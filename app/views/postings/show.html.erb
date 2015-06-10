@@ -1,6 +1,6 @@
 <h1><%= @posting.title %></h1>
 
-<h4>Categories:</h4> <% @posting.categories.each do |category| %><p><%= category.type %></p><% end %>
+<p><strong>Categories:</strong></p> <% @posting.categories.each do |category| %><p><%= category.type %></p><% end %>
 
 <p><strong> Description: </strong><%= @posting.description %></p>
 
@@ -8,7 +8,7 @@
 
 <p><strong> Compensation: </strong><%= @posting.compensation %></p>
 
-<p><strong> Phone numstronger: </strong><%= @posting.phone %></p>
+<p><strong> Phone number: </strong><%= @posting.phone %></p>
 
 <p><strong> Contact email: </strong><%= @posting.email %></p>
 </br>

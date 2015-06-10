@@ -1,3 +1,3 @@
-<h1>Hello Client!</h1>
+<h1>Hello <%= @user.name %>!</h1>
 
 <button><%= link_to 'See all postings', client_postings_path(current_user,@posting) %></button>

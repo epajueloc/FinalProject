@@ -1,0 +1,14 @@
+<h1>Your Profile</h1>
+
+<p><strong> Name: </strong><%= @user.name %></p>
+
+<p><strong><%= image_tag @user.avatar.url(:medium) %></strong></p>
+
+<p><strong>Categories:</strong></p> <% @user.categories.each do |category| %><p><%= category.type %></p><% end %>
+
+<p><strong> Description: </strong><%= @user.description %></p>
+<p><strong> Phone number: </strong><%= @user.phone %></p>
+<p><strong> Contact email: </strong><%= @user.email %></p>
+</br>
+
+<%= link_to 'Edit', edit_worker_path(current_user) %> | <%= link_to 'Back', workers_path(current_user) %>
