@@ -19,5 +19,13 @@
 
 .form {
 	text-align: center;
-	margin: auto 500px auto 500px;
+	margin: auto 450px auto 500px;
 }
+
+
+.form-inputs {
+	text-align: left;
+}
+
+
+

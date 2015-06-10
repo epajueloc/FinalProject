@@ -17,13 +17,15 @@ This posting could not be saved
 </br>
 
 <p>
+	<div class="form-inputs">
 	<%= f.input :title %>
 	<%= f.association :categories, value_method: :type %>
 	<%= f.input :description %>
   	<%= f.input :date %>
-  	<%= f.input :compensation %>
+  	<%= f.input :compensation, placeholder: "Ex. R100/hour or R500/service" %>
   	<%= f.input :phone %>
   	<%= f.input :email %>
+  	</div>
   	<%= f.button :submit %>
 </p>
 

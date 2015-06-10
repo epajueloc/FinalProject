@@ -23,5 +23,5 @@ class User < ActiveRecord::Base
 		end
 	end
 
-  enum role: [:worker, :client, :admin]
+  enum role: [:client, :worker, :admin]
 end
