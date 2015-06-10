@@ -19,7 +19,10 @@
 
 .form {
 	text-align: center;
-	margin: auto 450px auto 500px;
+	padding: 15px;
+	border-radius: 20px;
+	margin: 7% 35% auto 35%;
+	background-color: rgba(255,255,255,0.7);
 }
 
 

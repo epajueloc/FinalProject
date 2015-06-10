@@ -19,7 +19,7 @@ This posting could not be saved
 <p>
 	<div class="form-inputs">
 	<%= f.input :title %>
-	<%= f.association :categories, value_method: :type %>
+	<%= f.association :categories, as: :check_boxes, label_method: :type %>
 	<%= f.input :description %>
   	<%= f.input :date %>
   	<%= f.input :compensation, placeholder: "Ex. R100/hour or R500/service" %>
