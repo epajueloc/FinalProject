@@ -19,6 +19,11 @@
     font-size: 40px;
   }
 
+  h5 {
+  	text-align: center;
+  	font-size: 22px;
+  }
+
 .form {
 	text-align: center;
 	padding: 15px;

@@ -1,12 +1,12 @@
-<%= simple_form_for [current_user] do |f| %>
+<%= simple_form_for @worker, url: worker_path(@worker), method: :patch do |f| %>
 
-<% if @user.errors.any? %>
+<% if @worker.errors.any? %>
 <h3>
-<%= pluralize(@user.errors.count, "error") %>
-This user could not be saved
+<%= pluralize(@worker.errors.count, "error") %>
+This worker could not be saved
 </h3>
 <ul>
-<% @user.errors.full_messages each do |message| %>
+<% @worker.errors.full_messages each do |message| %>
 <li><%= message %></li>
 </ul>
 
@@ -20,7 +20,9 @@ This user could not be saved
 	<div class="form-inputs">
 	 <%= f.input :name, required: true %>
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.association :categories, label: "Service categories", as: :check_boxes, label_method: :type %>
+    <%= f.simple_fields_for @worker do |c| %>  
+       <%= c.association :categories, as: :check_boxes, label_method: :type %>
+    <% end %>
     <%= f.input :description, label: "Describe services provided" %>
     <%= f.input :phone, label: "Contact number" %>
     <%= f.input :avatar, label: "Upload photo", as: :file %>

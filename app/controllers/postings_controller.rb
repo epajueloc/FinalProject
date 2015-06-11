@@ -15,8 +15,8 @@ class PostingsController < ApplicationController
 		@posting = current_user.postings.build(posting_params)
 		categories = params[:posting][:category_ids]
 		categories.pop
-		categories.each do |k|
-		   @posting.categories << Category.find(k.to_i)
+		categories.each do |category_id|
+		   @posting.categories << Category.find(category_id.to_i)
 		end
 		if @posting.save
 			redirect_to client_posting_path(current_user, @posting)
