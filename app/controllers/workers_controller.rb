@@ -11,7 +11,7 @@ class WorkersController < ApplicationController
 
 	def show
 			@user = User.find(params[:id])
-			@category = Category.find(params[:category_id])
+			# @category = Category.find(params[:category_id])
 	end
 
 	def edit

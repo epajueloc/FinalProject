@@ -1,23 +1,24 @@
+<% if current_user.client? %>
+	<%= render 'navbar' %>
+<% elsif current_user.worker? %>
+	<%= render 'navbarworker' %>
+<% end %>
+
+
 <h1><%= @posting.title %></h1>
 
 <p><strong>Categories:</strong></p> <% @posting.categories.each do |category| %><p><%= category.type %></p><% end %>
 
 <p><strong> Description: </strong><%= @posting.description %></p>
-
 <p><strong> Date&Time: </strong><%= @posting.date %></p>
-
 <p><strong> Compensation: </strong><%= @posting.compensation %></p>
-
 <p><strong> Phone number: </strong><%= @posting.phone %></p>
-
 <p><strong> Contact email: </strong><%= @posting.email %></p>
 </br>
 
+<% if current_user.client? %>
 <%= link_to 'Edit', edit_client_posting_path(current_user, @posting) %> |
-
 <%= link_to 'Delete', client_posting_path(current_user, @posting),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
-
-
-<p><%= link_to 'All Postings', client_postings_path %></p>
+<% end %>

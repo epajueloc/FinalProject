@@ -1,7 +1,6 @@
+<%= render 'navbar' %>
+
 <h1>Hello <%= @user.name %>!</h1>
-
-<button><%= link_to 'See all postings', client_postings_path(current_user,@posting) %></button>
-
 
 <body>
     <!-- Page Content -->
@@ -22,8 +21,8 @@
         <% @categories.each do |category| %>
 	          <div class="col-md-3 portfolio-item">
 		          	<%= link_to category_path(category) do %>
-		          		<%= category.type %>
-		          		<i class="fa fa-<%= category.icon %>"></i> 
+		          		<%= category.type %> <br/>
+		          		<i class="fa fa-<%= category.icon %> fa-5x"></i>
 		          	<% end %>
 	          </div>
 				<% end %>

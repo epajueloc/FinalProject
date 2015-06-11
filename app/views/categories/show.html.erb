@@ -1,17 +1,19 @@
 
 <% if current_user.worker? %>
 
+<%= render 'navbarworker' %>
+
 	<h1><%= @category.type %> Job Postings</h1>
 	<h4>Postings</h4>
 	<% @category.postings.each do |posting| %>
 		<p><%= link_to posting.title, client_posting_path(current_user,posting) %></p>
 	<% end %>
 
-	<button><%= link_to 'Back', workers_path(current_user) %></button>
-
 <% elsif current_user.client? %>
 
-	<h1><%= @category.type %></h1>
+<%= render 'navbarclient' %>
+
+	<h1><%= @category.type %>s</h1>
 	<h4>List of workers</h4>
 		<% @category.users.worker.each do |worker| %>
 			<p><%= link_to worker.name, worker_path(worker, category_id: @category.id) %></p>

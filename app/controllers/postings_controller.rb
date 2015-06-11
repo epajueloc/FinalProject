@@ -1,6 +1,7 @@
 class PostingsController < ApplicationController
 	  before_action :authenticate_user!
 	def index
+		@user = current_user
 		@postings = Posting.all.order(:created_at)
 	end
 

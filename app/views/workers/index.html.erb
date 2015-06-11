@@ -1,6 +1,6 @@
-<h1>Hello <%= @user.name %>!</h1>
+<%= render 'navbar' %>
 
-<button><%= link_to 'View Profile', worker_path(current_user) %></button>
+<h1>Hello <%= @user.name %>!</h1>
 
 <body>
     <!-- Page Content -->
@@ -21,8 +21,8 @@
         <% @categories.each do |category| %>
 	          <div class="col-md-3 portfolio-item">
 		          	<%= link_to category_path(category) do %>
-		          		<%= category.type %>
-		          		<i class="fa fa-<%= category.icon %>"></i> 
+		          		<%= category.type %> <br/>
+		          		<i class="fa fa-<%= category.icon %> fa-5x"></i> 
 		          	<% end %>
 	          </div>
 				<% end %>
