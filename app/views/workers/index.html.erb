@@ -2,17 +2,6 @@
 
 <button><%= link_to 'View Profile', worker_path(current_user) %></button>
 
-<% @categories.each do |category| %>
-	<% if category.postings.count >= 1 %>
-		<h4><%= link_to category.type, category_path(category) %></h4>
-		<% category.postings.each do |posting| %>
-			<p><%= posting.title %></p>
-		<% end %>
-	<% end %>
-
-<% end %>
-
-
 <body>
     <!-- Page Content -->
     <div class="container">
@@ -20,27 +9,31 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Page Heading
-                    <small>Secondary Text</small>
+                <h1 class="page-header">Job Postings
+                    <small>by category</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 
         <!-- Projects Row -->
+        <div class="row">
         <% @categories.each do |category| %>
-	        <div class="row">
 	          <div class="col-md-3 portfolio-item">
-		          <h5> <%= category.type %> </h5>
-	            <li><%=link_to '<i class="fa fa-leaf"></i>'.html_safe, category_path(category) %> </li>
+		          	<%= link_to category_path(category) do %>
+		          		<%= category.type %>
+		          		<i class="fa fa-<%= category.icon %>"></i> 
+		          	<% end %>
 	          </div>
-	        </div>
 				<% end %>
+        </div>
+
+        <hr>
   
       <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Bridge 2015</p>
                 </div>
             </div>
             <!-- /.row -->

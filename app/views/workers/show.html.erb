@@ -1,4 +1,4 @@
-<h1>Your Profile</h1>
+<h1><%=@user.name%>'s Profile</h1>
 
 <p><strong> Name: </strong><%= @user.name %></p>
 
@@ -11,4 +11,13 @@
 <p><strong> Contact email: </strong><%= @user.email %></p>
 </br>
 
+
+<% if current_user.worker? %>
+
 <%= link_to 'Edit', edit_worker_path(current_user) %> | <%= link_to 'Back', workers_path(current_user) %>
+
+<% elsif current_user.client? %>
+
+<%= link_to 'Back', category_path(@category) %>
+
+<% end %>

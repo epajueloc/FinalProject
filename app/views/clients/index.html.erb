@@ -2,12 +2,45 @@
 
 <button><%= link_to 'See all postings', client_postings_path(current_user,@posting) %></button>
 
-<% @categories.each do |category| %>
-	<% if category.users.count >= 1 %>
-		<h4><%= link_to category.type, category_path(category) %></h4>
-		<% category.users.each do |worker| %>
-			<p><%= worker.name %></p>
-		<% end %>
-	<% end %>
 
-<% end %>
+<body>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Workers
+                    <small>by category</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+        <% @categories.each do |category| %>
+	          <div class="col-md-3 portfolio-item">
+		          	<%= link_to category_path(category) do %>
+		          		<%= category.type %>
+		          		<i class="fa fa-<%= category.icon %>"></i> 
+		          	<% end %>
+	          </div>
+				<% end %>
+        </div>
+
+        <hr>
+  
+      <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Bridge 2015</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+</body>
+
+
+
+

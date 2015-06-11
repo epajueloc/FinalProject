@@ -13,8 +13,8 @@
 
 	<h1><%= @category.type %></h1>
 	<h4>List of workers</h4>
-		<% @category.users.each do |worker| %>
-			<p><%= worker.name %></p>
+		<% @category.users.worker.each do |worker| %>
+			<p><%= link_to worker.name, worker_path(worker, category_id: @category.id) %></p>
 		<% end %>
 
 	<button><%= link_to 'Back', clients_path(current_user) %></button>
