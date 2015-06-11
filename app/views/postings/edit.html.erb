@@ -1,7 +1,9 @@
-<% render 'navbar' %>
+<%= render 'navbar' %>
 
+<div class= form> 
 <h1> Edit Job Post </h1>
 
-<div class= form> <%= render 'form' %> </div>
+<%= render 'form' %> 
  
-<button><%= link_to 'Back', client_postings_path(current_user, @posting) %></button>
+<%= link_to 'Back', client_postings_path(current_user, @posting) %>
+</div>

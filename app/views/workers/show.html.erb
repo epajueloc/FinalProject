@@ -1,6 +1,11 @@
-<%= render 'navbar' %>
-
 <h1><%=@user.name%>'s Profile</h1>
+
+<% if current_user.worker? %>
+	<%= render 'navbar' %>
+<% elsif current_user.client?%>
+	<%= render 'navbarclient' %>
+<% end %>
+	
 
 <p><strong> Name: </strong><%= @user.name %></p>
 
@@ -15,11 +20,5 @@
 
 
 <% if current_user.worker? %>
-
 <%= link_to 'Edit', edit_worker_path(current_user) %>
-
-<% elsif current_user.client? %>
-
-<%= link_to 'Back', category_path(@category) %>
-
 <% end %>
