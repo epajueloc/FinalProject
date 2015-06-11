@@ -30,10 +30,15 @@ class PostingsController < ApplicationController
 		@posting = Posting.find(params[:id])
 	end
 
+	# def show_category
+	# 	@user = current_user
+	# 	@categories = Category.find(params[:id])
+	# 	@posting = Posting
+	# end
+
 	def edit
 		@user = current_user
 		@client = User.find(params[:client_id])
-#posting = Posting.find(params[:id])
 		@posting = Posting.find(params[:id])
 
 	end
