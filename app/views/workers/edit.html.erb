@@ -1,3 +1,8 @@
+<%= render 'navbar' %>
+
+<h1>Edit Profile</h1>
+<div class ="form">
+
 <%= simple_form_for @worker, url: worker_path(@worker), method: :patch do |f| %>
 
 <% if @worker.errors.any? %>
@@ -29,5 +34,5 @@ This worker could not be saved
   	</div>
   	<%= f.button :submit %>
 </p>
-
 <% end %>
+</div>
