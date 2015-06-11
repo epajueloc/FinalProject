@@ -16,9 +16,6 @@ class WorkersController < ApplicationController
 	def update
 	end
 
-	def destroy
-	end
-
 	# private
 	# def user_params
 	# 	params.require(:user).permit(:name,:description,:email,:phone,:email, :role, :avatar)

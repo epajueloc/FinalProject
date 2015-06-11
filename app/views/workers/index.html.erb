@@ -4,7 +4,7 @@
 
 <% @categories.each do |category| %>
 	<% if category.postings.count >= 1 %>
-		<h4><%= category.type %></h4>
+		<h4><%= link_to category.type, category_path(category) %></h4>
 		<% category.postings.each do |posting| %>
 			<p><%= posting.title %></p>
 		<% end %>

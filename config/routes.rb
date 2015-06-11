@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :postings
   end
 
+  resources :categories
+
   # You can have the root of your site routed with "root"
   
   # Example of regular route:

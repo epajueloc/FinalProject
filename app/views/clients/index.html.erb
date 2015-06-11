@@ -1,3 +1,13 @@
 <h1>Hello <%= @user.name %>!</h1>
 
 <button><%= link_to 'See all postings', client_postings_path(current_user,@posting) %></button>
+
+<% @categories.each do |category| %>
+	<% if category.users.count >= 1 %>
+		<h4><%= link_to category.type, category_path(category) %></h4>
+		<% category.users.each do |worker| %>
+			<p><%= worker.name %></p>
+		<% end %>
+	<% end %>
+
+<% end %>
