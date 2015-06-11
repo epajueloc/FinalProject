@@ -9,13 +9,15 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require 4-col-portfolio
  *= require_tree .
  *= require_self
  */
  h1	{
  	text-align: center;
- }
+    font-family: 'Syncopate', sans-serif;
+    font-size: 40px;
+  }
 
 .form {
 	text-align: center;
