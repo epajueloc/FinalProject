@@ -1,10 +1,12 @@
 <%= render 'navbar' %>
 
 <h1>Postings</h1>
-
+<div class="form">
 <% @postings.each do |posting|%>
+
 <% if current_user.id == posting.user_id %>
-<h4><strong> <%= link_to posting.title, client_posting_path(current_user, posting) %></strong></h4>
-<p><%= posting.description %></p>
+<div class="display"><%= link_to posting.title, client_posting_path(current_user, posting) %>
+<p><%= posting.description %></p></div>
 <% end %>
 <% end %>
+</div>
