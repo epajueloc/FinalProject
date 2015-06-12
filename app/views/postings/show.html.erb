@@ -7,6 +7,9 @@
 
 <h1><%= @posting.title %></h1>
 
+<div class="form">
+
+<div class="form-inputs"
 <p><strong>Categories:</strong></p> <% @posting.categories.each do |category| %><p><%= category.type %></p><% end %>
 
 <p><strong> Description: </strong><%= @posting.description %></p>
@@ -16,9 +19,13 @@
 <p><strong> Contact email: </strong><%= @posting.email %></p>
 </br>
 
+</div>
+
 <% if current_user.client? %>
 <%= link_to 'Edit', edit_client_posting_path(current_user, @posting) %> |
 <%= link_to 'Delete', client_posting_path(current_user, @posting),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 <% end %>
+
+</div>
