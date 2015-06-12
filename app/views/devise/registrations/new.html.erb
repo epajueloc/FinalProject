@@ -13,7 +13,11 @@
     <%= f.input :password_confirmation, required: true %>
     <%= f.input :role, :collection => [:client, :worker], required: true %>
 
+    <hr>
+
     <h4> Please fill in the following fields only if you are a worker </h4>
+
+    <hr>
 
     <%= f.association :categories, label: "Service categories", as: :check_boxes, label_method: :type %>
     <%= f.input :description, label: "Describe services provided" %>
