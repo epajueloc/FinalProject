@@ -10,7 +10,7 @@
 <div class= "show">
 
 <p><strong><%= image_tag @user.avatar.url(:medium) %></strong></p>
-<div class="form-inputs"
+<div class="form-inputs">
 <p><strong>Categories:</strong></p> <% @user.categories.each do |category| %><li><%= category.type %></li><% end %> <br/>
 
 <p><strong> Description: </strong><%= @user.description %></p>
